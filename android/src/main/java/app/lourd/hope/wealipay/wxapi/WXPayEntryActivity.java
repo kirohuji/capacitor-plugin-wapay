@@ -49,7 +49,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 
     public IWXAPI getWxAPI(Context ctx) {
         if(wxAPI == null) {
-            appId = Pay.getWxAppId();
+            appId = WeAlipayPlugin.getWxAppId();
             return WXAPIFactory.createWXAPI(ctx,appId,false);
         }
         return wxAPI;
@@ -57,7 +57,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 
     @Override
     public void onResp(BaseResp resp) {
-        PluginCall call = Pay.getCall();
+        PluginCall call = WeAlipayPlugin.getCall();
 
         switch (resp.errCode) {
             case BaseResp.ErrCode.ERR_OK:

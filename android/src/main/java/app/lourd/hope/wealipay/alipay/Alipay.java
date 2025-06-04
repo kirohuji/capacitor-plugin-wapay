@@ -1,5 +1,4 @@
-package com.alipay.sdk.pay.demo;
-
+package app.lourd.hope.wealipay.alipay;
 import java.util.Map;
 
 import com.alipay.sdk.app.PayTask;
@@ -9,6 +8,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.getcapacitor.Bridge;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.PluginCall;
 import app.lourd.hope.wealipay.WeAlipayPlugin;
@@ -57,11 +58,11 @@ public class Alipay {
         }
     };
 
-    public void createPayment(String orderInfo) {        
+    public void createPayment(String orderInfo, Bridge bridge) {        
         final Runnable payRunnable = new Runnable() {
             @Override
             public void run() {
-                PayTask alipay = new PayTask(WeAlipayPlugin.getContext());
+                PayTask alipay = new PayTask(bridge.getContext());
                 Map<String, String> result = alipay.payV2(orderInfo, true);
                 Log.i("AlipayPlugin", result.toString());
                 

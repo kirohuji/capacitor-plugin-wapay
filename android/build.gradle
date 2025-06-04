@@ -57,6 +57,4 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
     api 'com.alipay.sdk:alipaysdk-android:+@aar'
-    
-
 }
