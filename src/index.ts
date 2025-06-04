@@ -1,8 +1,8 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { WeAlipayPluginPlugin } from './definitions';
+import { WeAlipayPlugin } from './definitions';
 
-const WeAlipayPlugin = registerPlugin<WeAlipayPluginPlugin>('WeAlipayPlugin', {
+const WeAlipayPlugin = registerPlugin<WeAlipayPlugin>('WeAlipayPlugin', {
   web: () => import('./web').then((m) => new m.WeAlipayPluginWeb()),
 });
 

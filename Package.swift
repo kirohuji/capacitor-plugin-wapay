@@ -7,22 +7,22 @@ let package = Package(
     products: [
         .library(
             name: "CapacitorPluginWapay",
-            targets: ["WeAlipayPluginPlugin"])
+            targets: ["WeAlipayPlugin"])
     ],
     dependencies: [
         .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "7.0.0")
     ],
     targets: [
         .target(
-            name: "WeAlipayPluginPlugin",
+            name: "WeAlipayPlugin",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
                 .product(name: "Cordova", package: "capacitor-swift-pm")
             ],
-            path: "ios/Sources/WeAlipayPluginPlugin"),
+            path: "ios/Sources/WeAlipayPlugin"),
         .testTarget(
-            name: "WeAlipayPluginPluginTests",
-            dependencies: ["WeAlipayPluginPlugin"],
-            path: "ios/Tests/WeAlipayPluginPluginTests")
+            name: "WeAlipayPluginTests",
+            dependencies: ["WeAlipayPlugin"],
+            path: "ios/Tests/WeAlipayPluginTests")
     ]
 )
