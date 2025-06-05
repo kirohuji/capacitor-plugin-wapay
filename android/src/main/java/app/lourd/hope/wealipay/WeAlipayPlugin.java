@@ -24,6 +24,7 @@ public class WeAlipayPlugin extends Plugin {
 
     @PluginMethod
     public void aliPayRequest(PluginCall call) {
+        _call = call;
         String orderInfo = call.getString("orderInfo");
         saveCall(call);
         alipay.createPayment(orderInfo, this.getBridge());

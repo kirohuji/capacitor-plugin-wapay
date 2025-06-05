@@ -15,9 +15,9 @@ public class WeAlipayPlugin: CAPPlugin, CAPBridgedPlugin {
 
     @objc func echo(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+        // call.resolve([
+        //     "value": implementation.echo(value)
+        // ])
     }
 
     @objc func aliPayRequest(_ call: CAPPluginCall) {
@@ -36,5 +36,4 @@ public class WeAlipayPlugin: CAPPlugin, CAPBridgedPlugin {
         // // let wxpay = WXPay()
         // // wxpay.createPayment(mch_id, prepay_id, nonce, timestamp, sign)
     }
-}
 }

@@ -62,7 +62,7 @@ public class Alipay {
         final Runnable payRunnable = new Runnable() {
             @Override
             public void run() {
-                PayTask alipay = new PayTask(bridge.getContext());
+                PayTask alipay = new PayTask(bridge.getActivity());
                 Map<String, String> result = alipay.payV2(orderInfo, true);
                 Log.i("AlipayPlugin", result.toString());
                 
